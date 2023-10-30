@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "MdOYKLy/MhTiPi/fvH7Vq1u3EV8HIoJ2WddUTO0bNj6BEseE/x9DwrnMG9q2PA31p5jhLfA0IIDaKTkcoWlD3A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\UTS-CDS\\Desktop\\libreria_JDPC\\libreria_JDPC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\swashbuckle.aspnetcore\\5.6.3\\swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\UTS-CDS\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512"
+  ],
+  "logs": []
+}
