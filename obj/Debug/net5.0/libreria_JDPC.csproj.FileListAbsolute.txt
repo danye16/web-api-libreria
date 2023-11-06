@@ -1,0 +1,7 @@
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.AssemblyInfo.cs
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\PC\source\repos\web-api-libreria\obj\Debug\net5.0\libreria_JDPC.MvcApplicationPartsAssemblyInfo.cache
