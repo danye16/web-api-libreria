@@ -61,6 +61,7 @@ namespace libreria_JDPC
             {
                 endpoints.MapControllers();
             });
+            AppDbInitializer.Seed(app);
         }
     }
 }
