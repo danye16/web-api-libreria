@@ -1,4 +1,5 @@
 using libreria_JDPC.Data;
+using libreria_JDPC.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,7 +35,8 @@ namespace libreria_JDPC
             services.AddControllers();
             //Configurar DBContext con SQL
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
-
+            //Configurar el servicio para que pueda ser usado
+            services.AddTransient<BooksService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "libreria_JDPC", Version = "v1" });
