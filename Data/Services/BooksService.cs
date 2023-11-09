@@ -39,9 +39,37 @@ namespace libreria_JDPC.Data.Services
         //Metodo para listar libros
         public List<Book> GetAllBks() => _context.Books.ToList();
 
-        //para un unico libro
+        //Metodo para buscar un unico libro
         public Book GetBookById(int bookid) => _context.Books.FirstOrDefault(n => n.Id== bookid);
-        
+        //Método que nos permite modificar un libro que se encuentra en la BD
+        public Book UpdateBookById(int bookid, BookVM book)
+        {
+            var _book = _context.Books.FirstOrDefault(n => n.Id== bookid);
+            if (_book != null) 
+            {
+                _book.Titulo = book.Titulo;
+                _book.Descripcion = book.Descripcion;
+                _book.IsRead = book.IsRead;
+                _book.DateRead = book.DateRead;
+                _book.Genero = book.Genero;
+                _book.Autor = book.Autor;
+                _book.CoverUrl = book.CoverUrl;
+                _book.Rate = book.Rate;
+                _context.SaveChanges();
+            }
+            return _book;
+        }
+
+        //Metodo para eliminar un libro de la BD
+        public void DeleteBookById(int bookid)
+        {
+            var _book = _context.Books.FirstOrDefault(n => n.Id == bookid);
+            if (_book != null) 
+            {
+                _context.Books.Remove( _book );
+                _context.SaveChanges();
+            }
+        }
     }
     
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace libreria_JDPC.Data.Models
 {
@@ -16,6 +17,11 @@ namespace libreria_JDPC.Data.Models
         public DateTime DateAdded { get; set; }
         public int? Rate { get; set; }
 
+        //Propiedades de navegacion
+        //(en esta parte es donde especificamos las relaciones)
+        public int PublisherId { get; set; }
+        public Publisher Publisher { get; set; }
+        public List<Book_Author> Book_Authors { get; set; }
 
 
 

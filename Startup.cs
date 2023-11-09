@@ -37,6 +37,8 @@ namespace libreria_JDPC
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
             //Configurar el servicio para que pueda ser usado
             services.AddTransient<BooksService>();
+            services.AddTransient<AuthorsService>();
+            services.AddTransient<PublishersService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "libreria_JDPC", Version = "v1" });
@@ -63,7 +65,7 @@ namespace libreria_JDPC
             {
                 endpoints.MapControllers();
             });
-            AppDbInitializer.Seed(app);
+           // AppDbInitializer.Seed(app);
         }
     }
 }
