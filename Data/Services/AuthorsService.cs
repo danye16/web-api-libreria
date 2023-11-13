@@ -1,6 +1,7 @@
 ﻿using libreria_JDPC.Data.Models;
 using libreria_JDPC.Data.ViewModels;
 using System;
+using System.Linq;
 
 namespace libreria_JDPC.Data.Services
 {
@@ -23,6 +24,11 @@ namespace libreria_JDPC.Data.Services
             };
             _context.Authors.Add(_author);
             _context.SaveChanges();
+        }
+
+        public AuthorWithBooksVM GetAuthorWithBooks(int authorId)
+        {
+            var _author = _context.Authors.Where(n => n.Id == authorId).Select(n => new AuthorWithBooksVM()
         }
     }
 }

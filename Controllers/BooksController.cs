@@ -30,10 +30,10 @@ namespace libreria_JDPC.Controllers
         }
 
 
-        [HttpPost("add-book")]
+        [HttpPost("add-book-with-authors")]
         public IActionResult AddBook([FromBody]BookVM book)
         {
-            _booksService.AddBook(book);
+            _booksService.AddBookWithAuthors(book);
             return Ok();
         }
         [HttpPut("update-book-by-id/{id}")]
