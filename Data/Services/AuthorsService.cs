@@ -29,6 +29,11 @@ namespace libreria_JDPC.Data.Services
         public AuthorWithBooksVM GetAuthorWithBooks(int authorId)
         {
             var _author = _context.Authors.Where(n => n.Id == authorId).Select(n => new AuthorWithBooksVM()
+            {
+                FullName = n.FullName,  
+                BookTitles = n.Book_Authors.Select(n => n.Book.Titulo).ToList() 
+            }).FirstOrDefault();
+            return _author;
         }
     }
 }

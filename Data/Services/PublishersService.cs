@@ -1,5 +1,7 @@
 ﻿using libreria_JDPC.Data.Models;
 using libreria_JDPC.Data.ViewModels;
+using System;
+using System.Linq;
 
 namespace libreria_JDPC.Data.Services
 {
@@ -13,7 +15,7 @@ namespace libreria_JDPC.Data.Services
 
         //Aqui vamos a tener un unico metodo para
         //agregar una nueva Editora en la BD.
-        public void AddPublisher(PublisherVM publisher)
+        public Publisher AddPublisher(PublisherVM publisher)
         {
             var _publisher = new Publisher()
             {
@@ -22,6 +24,35 @@ namespace libreria_JDPC.Data.Services
             };
             _context.Publishers.Add(_publisher);
             _context.SaveChanges();
+            return _publisher;
         }
-}
+
+        public Publisher GetPublisherById(int id) => _context.Publishers.FirstOrDefault(n => n.Id == id);
+
+        public PublisherWithBooksAndAuthorsVM GetPublisherData(int publisherId) 
+        {
+            var _publisherData = _context.Publishers.Where(n => n.Id == publisherId)
+                .Select(n => new PublisherWithBooksAndAuthorsVM()
+                {
+                    Name = n.Name,
+                    BookAuthors = n.Books.Select(n => new BookAuthorVM()
+                    {
+                        BookName = n.Titulo,
+                        BookAuthors = n.Book_Authors.Select(n => n.Author.FullName).ToList()
+
+                    }).ToList()
+                }).FirstOrDefault();
+            return _publisherData;
+        }
+        //MEtodo para eliminar un Publisher ´por medio de su id, tambien se borran los libros vinculados
+        internal void DeletePublisherById(int id)
+        {
+            var _publisher = _context.Publishers.FirstOrDefault(n => n.Id == id);
+            if (_publisher != null) 
+            {
+                _context.Publishers.Remove(_publisher);
+                _context.SaveChanges();
+            }
+        }
+    }
 }

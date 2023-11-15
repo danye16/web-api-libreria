@@ -21,5 +21,11 @@ namespace libreria_JDPC.Controllers
             _authorsServices.AddAuthor(author);
             return Ok();
         }
+        [HttpGet("get-author-with-books-by-id/{id}")]
+        public IActionResult GetActionResult(int id) 
+        {
+            var response = _authorsServices.GetAuthorWithBooks(id);
+            return Ok(response);
+        }
     }
 }

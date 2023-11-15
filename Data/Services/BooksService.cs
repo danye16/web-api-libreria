@@ -35,7 +35,7 @@ namespace libreria_JDPC.Data.Services
             _context.Books.Add(_book);
             _context.SaveChanges();
         
-            foreach( var id in book.AutorIDs) 
+            foreach(var id in book.AutorIDs) 
             {
                 var _book_author = new Book_Author()
                 {
@@ -43,6 +43,7 @@ namespace libreria_JDPC.Data.Services
                     AuthorId = id
                 };
                 _context.Book_Authors.Add(_book_author);
+                _context.SaveChanges();
 
             }
         }
