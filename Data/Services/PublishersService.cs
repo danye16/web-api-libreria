@@ -1,7 +1,9 @@
 ﻿using libreria_JDPC.Data.Models;
 using libreria_JDPC.Data.ViewModels;
+using libreria_JDPC.Exceptions;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace libreria_JDPC.Data.Services
 {
@@ -17,6 +19,8 @@ namespace libreria_JDPC.Data.Services
         //agregar una nueva Editora en la BD.
         public Publisher AddPublisher(PublisherVM publisher)
         {
+            if (StringStarsWithNumber(publisher.Name)) throw new PublisherNameException("El nombre empieza con un número",
+                publisher.Name);
             var _publisher = new Publisher()
             {
                 Name = publisher.Name
@@ -53,6 +57,13 @@ namespace libreria_JDPC.Data.Services
                 _context.Publishers.Remove(_publisher);
                 _context.SaveChanges();
             }
+            else
+            {
+                throw new Exception($"La editora con el id_ {id} no existe!");
+            }
+
         }
+        private bool StringStarsWithNumber(string name) => (Regex.IsMatch(name, @"^\d"));
+
     }
 }
